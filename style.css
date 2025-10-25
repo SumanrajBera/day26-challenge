@@ -16,7 +16,7 @@ body {
 }
 
 section {
-  max-width: 1000px;
+  max-width: 1200px;
 }
 
 main {
@@ -41,7 +41,7 @@ main #hero .text h1 {
   margin-bottom: 1rem;
 }
 main #hero .text h1 span {
-  font-size: clamp(2.5rem, 10vw, 3.5rem);
+  font-size: clamp(2.5rem, 10vw, 4rem);
 }
 main #hero .text p {
   font-size: clamp(1rem, 5vw, 1.5rem);
@@ -112,6 +112,81 @@ main #hero .video-img button {
   justify-content: center;
   align-items: center;
 }
+main #intro {
+  width: 100%;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+main #intro .container {
+  width: 100%;
+}
+main #intro .container h2 {
+  font-size: clamp(1.6rem, 5vw, 3.5rem);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+main #intro .container h2 .pink {
+  color: #ff6375;
+}
+main #intro .container h2 .yellow {
+  color: #fda801;
+}
+main #intro .container h2 .green {
+  color: #00b4a9;
+}
+main #intro .container .cards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+main #intro .container .cards .card {
+  width: 100%;
+  aspect-ratio: 1/1.5;
+  border-radius: 0.5rem;
+  position: relative;
+  background-size: cover;
+  max-width: 450px;
+  padding: 1rem;
+}
+main #intro .container .cards .card .text h3 {
+  font-size: clamp(1.2rem, 6vw, 1.8rem);
+  margin-bottom: 0.5rem;
+}
+main #intro .container .cards .card .text p {
+  opacity: 0.7;
+  font-size: clamp(0.8rem, 4vw, 1.2rem);
+}
+main #intro .container .cards .card:nth-child(1) {
+  background-image: url(./assets/woman.webp);
+  background-color: #FC8EAA;
+}
+main #intro .container .cards .card:nth-child(2) {
+  background-image: url(./assets/people.webp);
+  background-color: #FCAF01;
+}
+main #intro .container .cards .card:nth-child(3) {
+  background-image: url(./assets/man.webp);
+  background-color: #009B99;
+}
+main #mission {
+  width: 100%;
+  padding: 3rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main #mission p {
+  color: #A034F6;
+  font-size: clamp(0.8rem, 5vw, 1.2rem);
+  font-weight: 600;
+}
+main #mission h2 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
 
 @media (min-width: 500px) {
   main #hero .text h1 {
@@ -134,5 +209,44 @@ main #hero .video-img button {
   }
   main #hero .buttons button:nth-child(2) svg {
     width: 12%;
+  }
+  main #intro .container .cards {
+    flex-direction: row;
+    overflow-y: scroll;
+  }
+  main #intro .container .cards .card {
+    flex-shrink: 0;
+  }
+  main #intro .container .cards::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media (min-width: 1000px) {
+  main #intro .container {
+    width: 90%;
+  }
+  main #intro .container h2 {
+    font-size: clamp(2rem, 3vw, 2.7rem);
+  }
+  main #intro .container .cards .card {
+    flex-shrink: 1;
+    width: 33%;
+  }
+  main #intro .container .cards .card .text {
+    padding-top: 0.3rem;
+  }
+  main #intro .container .cards .card .text h3 {
+    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 7vw, 1.4rem);
+  }
+  main #intro .container .cards .card .text p {
+    font-size: 0.8rem;
+  }
+  main #mission p {
+    font-size: clamp(0.8rem, 5vw, 1.2rem);
+  }
+  main #mission h2 {
+    width: 80%;
+    font-size: clamp(2rem, 5vw, 2.5rem);
   }
 }/*# sourceMappingURL=style.css.map */
