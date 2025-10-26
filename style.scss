@@ -20,16 +20,29 @@ section {
     max-width: 1200px;
 }
 
+@mixin flexJustifyCenter() {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flexColumn() {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin commonPadding() {
+    padding: 3rem 1rem;
+}
+
 main {
     width: 100%;
 
-    display: flex;
-    flex-direction: column;
+    @include flexColumn();
     align-items: center;
 
     #hero {
         width: 100%;
-        padding: 3rem 1rem;
+        @include commonPadding();
         text-align: center;
 
         .text {
@@ -59,8 +72,7 @@ main {
         .buttons {
             width: 100%;
 
-            display: flex;
-            flex-direction: column;
+            @include flexColumn();
             gap: 1rem;
             margin-bottom: 1rem;
 
@@ -79,8 +91,7 @@ main {
                 background-color: #fff;
                 border: 1px solid;
 
-                display: flex;
-                justify-content: center;
+                @include flexJustifyCenter();
                 align-items: center;
                 gap: .2rem;
 
@@ -92,8 +103,7 @@ main {
             button:nth-child(2) {
                 color: white;
                 background-color: #A034F6;
-                display: flex;
-                justify-content: center;
+                @include flexJustifyCenter();
                 align-items: center;
                 gap: .5rem;
 
@@ -109,7 +119,7 @@ main {
 
             video {
                 width: 100%;
-                max-width: 680px;
+                max-width: 700px;
                 border-radius: .8rem;
             }
 
@@ -138,9 +148,8 @@ main {
 
     #intro {
         width: 100%;
-        padding: 3rem 1rem;
-        display: flex;
-        justify-content: center;
+        @include commonPadding();
+        @include flexJustifyCenter();
 
         .container {
             width: 100%;
@@ -165,8 +174,7 @@ main {
 
             .cards {
                 width: 100%;
-                display: flex;
-                flex-direction: column;
+                @include flexColumn();
                 align-items: center;
                 gap: 1rem;
 
@@ -216,11 +224,10 @@ main {
 
     #mission {
         width: 100%;
-        padding: 3rem 1rem;
+        @include commonPadding();
         text-align: center;
 
-        display: flex;
-        flex-direction: column;
+        @include flexColumn();
         align-items: center;
 
         p {
@@ -237,7 +244,7 @@ main {
     #instructor {
         width: 100%;
 
-        padding: 3rem 1rem;
+        @include commonPadding();
 
         .container {
             width: 100%;
@@ -245,13 +252,11 @@ main {
             padding: 1rem;
             overflow: hidden;
             border-radius: .8rem;
-            display: flex;
-            flex-direction: column;
+            @include flexColumn();
 
             .text {
                 width: 100%;
-                display: flex;
-                flex-direction: column;
+                @include flexColumn();
                 gap: 1rem;
 
                 .title {
@@ -290,15 +295,13 @@ main {
 
     #syllabus {
         width: 100%;
-        padding: 3rem 1rem;
+        @include commonPadding();
 
-        display: flex;
-        justify-content: center;
+        @include flexJustifyCenter();
 
         .container {
             width: 100%;
-            display: flex;
-            flex-direction: column;
+            @include flexColumn();
             gap: 1rem;
 
             h2 {
@@ -306,8 +309,7 @@ main {
             }
 
             .grid {
-                display: flex;
-                flex-direction: column;
+                @include flexColumn();
                 gap: 1rem;
 
                 .card {
@@ -336,6 +338,132 @@ main {
 
 
             }
+        }
+    }
+
+    #benefits {
+        width: 100%;
+        @include commonPadding();
+
+        @include flexJustifyCenter();
+
+        .container {
+            width: 100%;
+            @include flexColumn();
+            gap: 2.5rem;
+
+            .text {
+                h2 {
+                    font-size: clamp(1.45rem, 5vw, 3.5rem);
+                    margin-bottom: 1rem;
+                }
+
+                .text-grp {
+                    @include flexColumn();
+
+                    .benefit {
+                        margin-bottom: 1rem;
+
+                        h3 {
+                            font-size: clamp(1rem, 5vw, 1.5rem);
+                            font-weight: 600;
+                            margin-bottom: .5rem;
+                        }
+
+                        p {
+                            opacity: 0.7;
+                            font-size: clamp(.8rem, 5vw, 1rem);
+                        }
+                    }
+                }
+            }
+
+            .img {
+                width: 100%;
+                background-image: url(./assets/benfit.webp);
+                background-size: cover;
+                border-radius: .5rem;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    #calling {
+        width: 100%;
+        @include commonPadding();
+
+        @include flexJustifyCenter();
+
+        .container {
+            width: 100%;
+            border-radius: 1rem;
+
+            background-image: linear-gradient(#0000004d, #00000026), url(./assets/team.webp);
+            background-size: cover;
+            aspect-ratio: 1/1.5;
+            background-position: 40%;
+            @include flexColumn();
+            justify-content: flex-end;
+            padding-bottom: 1rem;
+
+            .text {
+
+                text-align: center;
+
+                h2 {
+                    font-size: clamp(3rem, 15vw, 6rem);
+                    line-height: .8;
+                    color: #F0DB1D;
+                    text-align: center;
+                    margin-bottom: 1rem;
+                }
+
+                p {
+                    font-size: clamp(.5rem, 4vw, 1.2rem);
+                    color: #F0DB1D;
+                    background-color: #000;
+                    border-radius: 1rem;
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+
+    footer {
+        @include flexColumn();
+        align-items: center;
+        gap: 1rem;
+        padding-block: 2rem;
+
+        .comp {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        button {
+            padding: 1rem;
+            width: 300px;
+            color: white;
+            background-color: #A034F6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 2rem;
+            font-size: 1rem;
+            border: 0;
+            gap: .5rem;
+            cursor: pointer;
+
+            svg {
+                width: 5%;
+            }
+        }
+
+        .copy {
+            font-size: .8rem;
         }
     }
 }
@@ -426,6 +554,43 @@ main {
                 }
             }
         }
+
+        #benefits {
+
+            .container {
+
+                .text {
+
+                    .text-grp {
+                        flex-direction: row;
+                        align-items: baseline;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+
+                        .benefit {
+                            width: 48%;
+                        }
+                    }
+                }
+            }
+        }
+
+        #calling {
+
+            .container {
+                aspect-ratio: 1/.7;
+                background-position: center;
+
+                .text {
+
+                    p {
+                        font-size: clamp(.4rem, 3vw, 1.2rem);
+                        width: 80%;
+                        margin-inline: auto;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -435,6 +600,7 @@ main {
             .container {
                 .grid {
                     grid-template-columns: repeat(3, 1fr);
+
                     .card {
 
                         img {
@@ -445,6 +611,19 @@ main {
                     .card:nth-child(1) {
                         grid-area: 1 / 1 / span 2 / span 2;
                     }
+                }
+            }
+        }
+
+        #benefits {
+
+            .container {
+                flex-direction: row-reverse;
+                align-items: center;
+
+                .text,
+                .img {
+                    width: 50%;
                 }
             }
         }
@@ -459,7 +638,7 @@ main {
                 width: 90%;
 
                 h2 {
-                    font-size: clamp(2rem, 3vw, 2.7rem);
+                    font-size: clamp(2rem, 3vw, 2.4rem);
                 }
 
                 .cards {
@@ -536,6 +715,10 @@ main {
             .container {
                 width: 90%;
 
+                h2 {
+                    font-size: 2.4rem;
+                }
+
                 .grid {
                     grid-template-columns: repeat(4, 1fr);
 
@@ -547,6 +730,58 @@ main {
 
                     .card:nth-child(1) {
                         grid-area: 1 / 1 / span 2 / span 2;
+                    }
+                }
+            }
+        }
+
+        #benefits {
+            .container {
+                width: 90%;
+
+                .text {
+                    h2 {
+                        font-size: 2.4rem;
+                    }
+
+                    .text-grp {
+
+                        .benefit {
+
+                            h3 {
+                                font-size: 1.3rem;
+                                font-weight: 600;
+                                margin-bottom: .5rem;
+                            }
+
+                            p {
+                                opacity: 0.7;
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #calling {
+
+            .container {
+                width: 90%;
+                aspect-ratio: 1/.7;
+                background-position: center;
+
+                .text {
+
+                    h2 {
+                        font-size: 7rem;
+                        margin-bottom: 0rem;
+                    }
+
+                    p {
+                        font-size: .8rem;
+                        width: 40%;
+                        margin-inline: auto;
                     }
                 }
             }

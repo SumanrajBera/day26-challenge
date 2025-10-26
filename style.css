@@ -91,7 +91,7 @@ main #hero .video-img {
 }
 main #hero .video-img video {
   width: 100%;
-  max-width: 680px;
+  max-width: 700px;
   border-radius: 0.8rem;
 }
 main #hero .video-img button {
@@ -273,6 +273,113 @@ main #syllabus .container .grid .card img {
      object-fit: cover;
   aspect-ratio: 1/0.7;
 }
+main #benefits {
+  width: 100%;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+main #benefits .container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+main #benefits .container .text h2 {
+  font-size: clamp(1.45rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+main #benefits .container .text .text-grp {
+  display: flex;
+  flex-direction: column;
+}
+main #benefits .container .text .text-grp .benefit {
+  margin-bottom: 1rem;
+}
+main #benefits .container .text .text-grp .benefit h3 {
+  font-size: clamp(1rem, 5vw, 1.5rem);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+main #benefits .container .text .text-grp .benefit p {
+  opacity: 0.7;
+  font-size: clamp(0.8rem, 5vw, 1rem);
+}
+main #benefits .container .img {
+  width: 100%;
+  background-image: url(./assets/benfit.webp);
+  background-size: cover;
+  border-radius: 0.5rem;
+}
+main #benefits .container .img img {
+  width: 100%;
+}
+main #calling {
+  width: 100%;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+main #calling .container {
+  width: 100%;
+  border-radius: 1rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3019607843), rgba(0, 0, 0, 0.1490196078)), url(./assets/team.webp);
+  background-size: cover;
+  aspect-ratio: 1/1.5;
+  background-position: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 1rem;
+}
+main #calling .container .text {
+  text-align: center;
+}
+main #calling .container .text h2 {
+  font-size: clamp(3rem, 15vw, 6rem);
+  line-height: 0.8;
+  color: #F0DB1D;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+main #calling .container .text p {
+  font-size: clamp(0.5rem, 4vw, 1.2rem);
+  color: #F0DB1D;
+  background-color: #000;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+main footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 2rem;
+}
+main footer .comp {
+  font-size: 2rem;
+  font-weight: 600;
+}
+main footer button {
+  padding: 1rem;
+  width: 300px;
+  color: white;
+  background-color: #A034F6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  font-size: 1rem;
+  border: 0;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+main footer button svg {
+  width: 5%;
+}
+main footer .copy {
+  font-size: 0.8rem;
+}
 
 @media (min-width: 500px) {
   main #hero .text h1 {
@@ -325,6 +432,24 @@ main #syllabus .container .grid .card img {
   main #syllabus .container .grid .card:nth-child(1) {
     grid-area: 1/1/span 2/span 2;
   }
+  main #benefits .container .text .text-grp {
+    flex-direction: row;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  main #benefits .container .text .text-grp .benefit {
+    width: 48%;
+  }
+  main #calling .container {
+    aspect-ratio: 1/0.7;
+    background-position: center;
+  }
+  main #calling .container .text p {
+    font-size: clamp(0.4rem, 3vw, 1.2rem);
+    width: 80%;
+    margin-inline: auto;
+  }
 }
 @media (min-width: 750px) {
   main #syllabus .container .grid {
@@ -336,13 +461,21 @@ main #syllabus .container .grid .card img {
   main #syllabus .container .grid .card:nth-child(1) {
     grid-area: 1/1/span 2/span 2;
   }
+  main #benefits .container {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  main #benefits .container .text,
+  main #benefits .container .img {
+    width: 50%;
+  }
 }
 @media (min-width: 1000px) {
   main #intro .container {
     width: 90%;
   }
   main #intro .container h2 {
-    font-size: clamp(2rem, 3vw, 2.7rem);
+    font-size: clamp(2rem, 3vw, 2.4rem);
   }
   main #intro .container .cards .card {
     flex-shrink: 1;
@@ -397,6 +530,9 @@ main #syllabus .container .grid .card img {
   main #syllabus .container {
     width: 90%;
   }
+  main #syllabus .container h2 {
+    font-size: 2.4rem;
+  }
   main #syllabus .container .grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -405,5 +541,34 @@ main #syllabus .container .grid .card img {
   }
   main #syllabus .container .grid .card:nth-child(1) {
     grid-area: 1/1/span 2/span 2;
+  }
+  main #benefits .container {
+    width: 90%;
+  }
+  main #benefits .container .text h2 {
+    font-size: 2.4rem;
+  }
+  main #benefits .container .text .text-grp .benefit h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  main #benefits .container .text .text-grp .benefit p {
+    opacity: 0.7;
+    font-size: 1rem;
+  }
+  main #calling .container {
+    width: 90%;
+    aspect-ratio: 1/0.7;
+    background-position: center;
+  }
+  main #calling .container .text h2 {
+    font-size: 7rem;
+    margin-bottom: 0rem;
+  }
+  main #calling .container .text p {
+    font-size: 0.8rem;
+    width: 40%;
+    margin-inline: auto;
   }
 }/*# sourceMappingURL=style.css.map */
