@@ -187,6 +187,92 @@ main #mission p {
 main #mission h2 {
   font-size: clamp(1.8rem, 5vw, 3rem);
 }
+main #instructor {
+  width: 100%;
+  padding: 3rem 1rem;
+}
+main #instructor .container {
+  width: 100%;
+  background-image: linear-gradient(100deg, #e1e2e2, #e1e2e2 50%, #abaaa8);
+  padding: 1rem;
+  overflow: hidden;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+}
+main #instructor .container .text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main #instructor .container .text .title {
+  color: #A034F6;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 5vw, 1.2rem);
+}
+main #instructor .container .text h3 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
+main #instructor .container .text .info {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  font-weight: 100;
+}
+main #instructor .container .text .logos {
+  width: 100%;
+  display: flex;
+  gap: 0.8rem;
+}
+main #instructor .container .text .logos img {
+  width: 32px;
+  aspect-ratio: 1/1;
+}
+main #instructor .container .pablo {
+  width: 100%;
+  transform: translate(10%, 10%);
+}
+main #syllabus {
+  width: 100%;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+main #syllabus .container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main #syllabus .container h2 {
+  font-size: clamp(1.45rem, 5vw, 3.5rem);
+}
+main #syllabus .container .grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main #syllabus .container .grid .card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+main #syllabus .container .grid .card p {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  padding: 1rem;
+}
+main #syllabus .container .grid .card img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/0.7;
+}
 
 @media (min-width: 500px) {
   main #hero .text h1 {
@@ -220,6 +306,36 @@ main #mission h2 {
   main #intro .container .cards::-webkit-scrollbar {
     display: none;
   }
+  main #instructor .container {
+    padding: 3rem;
+  }
+  main #instructor .container .text .info {
+    width: 80%;
+  }
+  main #instructor .container .pablo {
+    margin-top: -18%;
+    width: 100%;
+    transform: translate(10%, 10%);
+  }
+  main #syllabus .container .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  main #syllabus .container .grid .card:nth-child(1) {
+    grid-area: 1/1/span 2/span 2;
+  }
+}
+@media (min-width: 750px) {
+  main #syllabus .container .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main #syllabus .container .grid .card img {
+    aspect-ratio: 1/1;
+  }
+  main #syllabus .container .grid .card:nth-child(1) {
+    grid-area: 1/1/span 2/span 2;
+  }
 }
 @media (min-width: 1000px) {
   main #intro .container {
@@ -246,7 +362,48 @@ main #mission h2 {
     font-size: clamp(0.8rem, 5vw, 1.2rem);
   }
   main #mission h2 {
-    width: 80%;
+    text-align: center;
+    width: 75%;
     font-size: clamp(2rem, 5vw, 2.5rem);
+  }
+  main #instructor {
+    padding-top: 8rem;
+    display: flex;
+    justify-content: center;
+  }
+  main #instructor .container {
+    width: 90%;
+    padding: 3rem;
+    flex-direction: row;
+    overflow: visible;
+    position: relative;
+  }
+  main #instructor .container .text {
+    width: 50%;
+  }
+  main #instructor .container .text .info {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+  main #instructor .container .pablo {
+    position: absolute;
+    max-width: 55%;
+    right: 0;
+    bottom: 0;
+    margin-top: 0;
+    transform: translate(0%, 0%);
+    border-bottom-right-radius: 0.8rem;
+  }
+  main #syllabus .container {
+    width: 90%;
+  }
+  main #syllabus .container .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  main #syllabus .container .grid .card p {
+    font-size: 1.5rem;
+  }
+  main #syllabus .container .grid .card:nth-child(1) {
+    grid-area: 1/1/span 2/span 2;
   }
 }/*# sourceMappingURL=style.css.map */
